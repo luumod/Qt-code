@@ -1,0 +1,157 @@
+/* QLabel{
+    background-color: aqua;
+    font-size: 16pt;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    font-style: solid;
+}
+
+
+/* 通用选择器
+*{
+    background-color: skyblue;
+} */
+
+/*类选择器*/
+/* .QAbstractButton{
+    background-color: antiquewhite;
+} */
+
+/*属性选择器*/
+/* QPushButton[checkable = 'true']{
+    background-color: chocolate;
+} */
+
+/*ID选择器*/
+/* QPushButton#btn1{
+    background-color: fuchsia;
+} */
+
+/*子孙对象选择器*/
+/* QGroupBox QAbstractButton{
+    background-color: red;
+} */
+
+/*子对象选择器*/
+/* QGroupBox QRadioButton{
+    background-color: darkgreen;
+} */
+
+/* QComboBox:drop-down{
+    background-color: aqua;
+} */
+
+/* 
+QPushButton:hover{
+    background-color: aqua;
+}  */
+
+
+QLabel{
+    background-color: aqua;
+    font-size: 16pt;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    font-style: solid;
+}
+
+
+QCheckBox{
+    color:red;
+}
+
+QCheckBox::indicator
+{
+    width:16px;
+    height:16px;
+    border-image: url(:/images/checkBox/checkbox-unchecked.png);
+    border-radius:5px;
+}
+QCheckBox::indicator:checked
+{
+    border-image: url(:/images/checkBox/checkbox-checked.png);
+}
+QCheckBox::indicator:unchecked:hover{
+    border-image: url(:/images/checkBox/checkbox-unchecked-hover.png);
+}
+
+QCheckBox::indicator:checked:hover{
+    border-image: url(:/images/checkBox/checkbox-checked-hover.png);
+}
+
+
+
+QGroupBox {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                      stop: 0 #E0E0E0, stop: 1 #EEEEEE);
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-top: 10px; /* leave space at the top for the title */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* position at the top center */
+    padding: 2px 3px;
+    color: white;
+    margin-top: 2px;
+    background-color: gray;
+    border-radius: 3px;
+    spacing: 5px;
+}
+
+QGroupBox::indicator {
+    width: 13px;
+    height: 13px;
+    border: 1px solid black;
+    background: white;
+}
+
+QGroupBox::indicator:checked {
+    background: yellow;
+}
+
+
+
+/*------------------------------------------------*/
+
+QComboBox {
+    color: black;
+	border:1px solid black;
+	border-radius:5px;
+	padding: 1px 1px 1px 1px;	/*不加这个圆角会有缺失*/
+}
+QComboBox::drop-down
+{
+	width:25px;
+	border-image: url(:/images/comboBox/drop-down.png);
+}
+QComboBox::drop-down:hover
+{
+	border-image: url(:/images/comboBox/drop-down-hover.png);
+}
+/*把checked换成on也行*/
+QComboBox::drop-down:checked
+{
+	border-image: url(:/images/comboBox/drop-down-on.png);
+}
+QComboBox::drop-down:checked:hover
+{
+	border-image: url(:/images/comboBox/drop-down-on-hover.png);
+}
+/*设置下拉菜单的样式*/
+QComboBox#usernameEdit QAbstractItemView
+{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    outline:0px ;
+}
+/*设置下拉菜单的每一项的样式*/
+QComboBox#usernameEdit QAbstractItemView::item
+{
+    height: 50px;   
+    /*设置高度不生效，需要给QcomboBox设置如下属性(二选一)
+        //1,usernameEdit->setItemDelegate(new QStyledItemDelegate);
+    	//2,usernameEdit->setView(new QListView
+    */
+}

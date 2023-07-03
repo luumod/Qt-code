@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/qss/qt.css</file>
+        <file>images/comboBox/drop-down.png</file>
+        <file>images/comboBox/drop-down-hover.png</file>
+        <file>images/comboBox/drop-down-on.png</file>
+        <file>images/comboBox/drop-down-on-hover.png</file>
+        <file>images/spinBox/down-arrow.png</file>
+        <file>images/spinBox/down-arrow-hover.png</file>
+        <file>images/spinBox/up-arrow.png</file>
+        <file>images/spinBox/up-arrow-hover.png</file>
+        <file>images/checkBox/checkbox-checked.png</file>
+        <file>images/checkBox/checkbox-checked-hover.png</file>
+        <file>images/checkBox/checkbox-unchecked.png</file>
+        <file>images/checkBox/checkbox-unchecked-hover.png</file>
+    </qresource>
+</RCC>
