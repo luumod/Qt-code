@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ylh.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1">
+        <file>windowIcon.png</file>
+        <file>exeIcon.ico</file>
+    </qresource>
+</RCC>

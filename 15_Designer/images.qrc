@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>window.png</file>
+        <file>book.png</file>
+    </qresource>
+</RCC>

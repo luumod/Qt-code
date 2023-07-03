@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>touxiang.png</file>
+        <file>mask.jpg</file>
+        <file>img.bmp</file>
+        <file>plane1.png</file>
+        <file>boom1.png</file>
+        <file>enemy1.png</file>
+        <file>enemy2.png</file>
+        <file>enemy3.png</file>
+    </qresource>
+</RCC>
