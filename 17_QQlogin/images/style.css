@@ -1,0 +1,130 @@
+
+QWidget#From{
+    background-color: white;
+    border-radius: 3px;
+}
+
+
+QPushButton{
+    background: transparent;
+    border: none;
+    border-radius: 3px;
+}
+
+QPushButton#closeBtn{
+    image: url(":/images/close.png");
+    border-radius: 3px;
+}
+
+QPushButton#minimum{
+    image: url(":/images/min.png");
+}
+
+QPushButton#settings{
+    image: url(":/images/set.png");
+}
+
+QPushButton#closeBtn:hover{
+    background-color: rgb(196,43,28);
+}
+
+QPushButton#minimum:hover{
+    background-color: rgba(199, 199, 199, 120)
+}
+
+QLabel#topLabel{
+    border-radius: 10px;
+}
+
+
+/*-----------------------*/
+QPushButton#QRcodeBtn{
+    image: url(":/images/qrcode.png")
+}
+QPushButton#QRcodeBtn:hover{
+    image: url(":/images/qrcode-hover.png")
+}
+
+/*LoginBtn*/
+QPushButton#loginBtn{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0.0471698 rgba(11,193,255, 255), stop:0.273585 rgba(7,188,252, 255), stop:0.448113 rgba(4,186,251, 255), stop:0.584906 rgba(2,184,250, 255), stop:0.740566 rgba(4,186,251, 255), stop:0.877358 rgba(1,182,250, 255));	
+    border-radius: 4px;
+
+    /*字体*/
+    font-size: 12pt;
+    font-family: "微软雅黑";
+    color: white;
+}
+
+QPushButton#loginBtn:hover{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0.0471698 rgba(35, 204, 255, 255), stop:0.273585 rgba(28, 197, 252, 255), stop:0.448113 rgba(42, 201, 252, 255), stop:0.584906 rgba(51, 203, 252, 255), stop:0.740566 rgba(59, 205, 252, 255), stop:0.877358 rgba(58, 189, 249, 255));	 
+    border-radius: 4px;
+}
+
+
+/*------------------------*/
+QPushButton#findPasswd,QPushButton#registerAccount,QCheckBox#autoLogin,QCheckBox#savePasswd{
+    color: rgb(166, 166, 166);
+}
+
+
+QPushButton#findPasswd:hover,QPushButton#registerAccount:hover{
+    color: rgb(131,131,131);
+}
+
+/* QCheckBox#autoLogin:indicator,QCheckBox#savePasswd:indicator{
+    border: 1px solid rgb(205,205,205);
+    border-radius: 2px;
+}
+
+QCheckBox#autoLogin:indicator:hover,QCheckBox#savePasswd:indicator:hover{
+    border: 1px solid rgb(172,172,172);
+    border-radius: 2px;
+} */
+
+QCheckBox:indicator:unchecked{
+    image: url(":/images/checkbox-unchecked.png");
+}
+QCheckBox:indicator:unchecked:hover{
+    image: url(":/images/checkbox-unchecked-hover.png");
+}
+QCheckBox:indicator:checked{
+    image: url(":/images/checkbox-checked.png");
+}
+QCheckBox:indicator:checked:hover{
+    image: url(":/images/checkbox-checked-hover.png");
+}
+
+/*----------------------------*/
+QComboBox#account,QLineEdit#passwd{
+    border: none;
+    border-bottom: 1px solid rgb(229,229,229);
+}
+
+QComboBox#account:hover,QLineEdit#passwd:hover{
+    border-bottom-color: rgb(193,193,193);
+}
+
+
+QComboBox#account:focus,QLineEdit#passwd:focus{
+    border-bottom-color: rgb(18,183,245);
+}
+
+QComboBox#account:drop-down{
+    image: url(":/images/drop-down.png");
+}
+QComboBox#account:drop-down:checked{
+    image: url(":/images/drop-down-on.png");
+}
+QComboBox#account:drop-down:hover{
+    image: url(":/images/drop-down-hover.png");
+}
+QComboBox#account:drop-down:checked:hover{
+    image: url(":/images/drop-down-on-hover.png");
+}
+
+QComboBox#account,QLineEdit#passwd{
+    font-size: 12pt;
+}
+
+/*----------------*/

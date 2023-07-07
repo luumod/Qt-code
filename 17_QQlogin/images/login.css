@@ -1,0 +1,121 @@
+QPushButton
+{
+    border: none;
+}
+
+QPushButton#closeBtn
+{
+    background: url(:/images/close.png) no-repeat center;
+}
+
+QPushButton#closeBtn:hover
+{
+    background-color: rgb(255,84,57);
+}
+
+QPushButton#miniBtn
+{
+    background: url(:/images/min.png) no-repeat center;
+
+}
+
+QPushButton#miniBtn:hover
+{
+    background-color: rgba(230,231,232,120);
+}
+
+/*buttomWidget*/
+QPushButton#loginBtn
+{
+    min-height: 35px;
+    min-width: 250px;
+    background-color: QLinearGradient(x1:0 y1:0 x2:1 y2:1 stop:0.3 rgb(11,194,255) stop:1 rgb(0,182,250));
+    border-radius:5px;
+    color:white;
+    font:normal 18px "楷体";
+}
+QPushButton#loginBtn:hover
+{
+    background-color: QLinearGradient(x1:0 y1:0 x2:1 y2:1 stop:0.3 rgb(34,203,255) stop:1 rgb(28,196,252));
+}
+/*账号密码*/
+QComboBox#usernameEdit,QLineEdit#passwordEdit
+{
+    min-height: 30px;
+    min-width: 250px;
+    border: none;
+    border-bottom: 1px solid rgb(229,229,229);
+    font: normal 18px "楷体";
+}
+
+QComboBox#usernameEdit QAbstractItemView
+{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    outline:0px ;
+}
+
+QComboBox#usernameEdit QAbstractItemView::item
+{
+    height: 50px;
+}
+
+QComboBox#usernameEdit:hover,QLineEdit#passwordEdit:hover
+{
+    border-bottom: 1px solid rgb(193,193,193);
+}
+
+QComboBox#usernameEdit::focus,QLineEdit#passwordEdit::focus
+{
+    border-bottom: 1px solid rgb(18,183,245);
+}
+/*下拉箭头*/
+QComboBox#usernameEdit::drop-down
+{
+    border-image: url(:/images/drop-down.png);
+    min-width: 25px;
+}
+QComboBox#usernameEdit::drop-down:hover
+{
+    border-image: url(:/images/drop-down-hover.png);
+}
+
+QComboBox#usernameEdit::drop-down:checked
+{
+    border-image: url(:/images/drop-down-on.png);
+    min-width: 25px;
+}
+QComboBox#usernameEdit::drop-down:checked
+{
+    border-image: url(:/images/drop-down-on-hover.png);
+}
+
+/*文字颜色*/
+QCheckBox#autoLoginCheck,QCheckBox#rememberCheck,QPushButton#forgetBtn,QPushButton#rigesterBtn
+{
+    color: rgb(166,166,166);
+    min-height: 25px;
+}
+
+QPushButton#forgetBtn:hover,QPushButton#rigesterBtn:hover
+{
+    color: rgb(131,131,131);
+}
+/*复选框指示器*/
+QCheckBox#autoLoginCheck::indicator,QCheckBox#rememberCheck::indicator
+{
+    border:1px solid rgb(204,204,204);
+    border-radius: 2px;
+}
+
+QCheckBox#autoLoginCheck::indicator:hover,QCheckBox#rememberCheck::indicator:hover
+{
+    border:1px solid rgb(171,171,171);
+}
+
+QCheckBox#autoLoginCheck::indicator:checked,QCheckBox#rememberCheck::indicator:checked
+{
+    border-image: url(:/images/check.png);
+    border:1px solid rgb(171,171,171);
+}
+

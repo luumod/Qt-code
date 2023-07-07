@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/check.png</file>
+        <file>images/close.png</file>
+        <file>images/drop-down.png</file>
+        <file>images/drop-down-hover.png</file>
+        <file>images/drop-down-on.png</file>
+        <file>images/drop-down-on-hover.png</file>
+        <file>images/gifLabel.gif</file>
+        <file>images/login.css</file>
+        <file>images/min.png</file>
+        <file>images/passwd.png</file>
+        <file>images/passwd-focus.png</file>
+        <file>images/passwd-focus_20230626225229.png</file>
+        <file>images/qrcode.png</file>
+        <file>images/qrcode-hover.png</file>
+        <file>images/username.png</file>
+        <file>images/username-focus.png</file>
+        <file>images/style.css</file>
+        <file>images/set.png</file>
+        <file>images/dog.png</file>
+        <file>images/portrait/default.jpg</file>
+        <file>images/checkbox-checked.png</file>
+        <file>images/checkbox-checked-hover.png</file>
+        <file>images/checkbox-unchecked.png</file>
+        <file>images/checkbox-unchecked-hover.png</file>
+    </qresource>
+</RCC>
