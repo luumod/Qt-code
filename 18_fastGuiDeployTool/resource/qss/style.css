@@ -1,0 +1,37 @@
+﻿*{
+        background-color: white;
+}
+
+QComboBox#qtInfoCbx, QPushButton#resBtn {
+        border: 1px solid rgb(213,213,213);
+	border-radius: 10px;
+	min-height: 40px;
+}
+QComboBox#qtInfoCbx {
+        font: normal 28px '宋体';
+}
+QPushButton#resBtn{
+        font: normal 20px '楷体';
+}
+QLabel{
+        font: normal 20px '楷体';
+}
+
+QPushButton#exeFileBtn {
+        border: 2px solid rgb(213,213,213);
+	font-size: 36px;
+	font-style: italic;
+	color: rgb(205,205,210);
+}
+
+QPushButton:hover {
+	background-color: rgba(213, 213, 213,200)
+}
+
+QComboBox:drop-down {
+	image: url(':/assets/images/drop-down.png')
+}
+
+QComboBox:drop-down:hover {
+	image: url(':/assets/images/drop-down-hover.png')
+}
