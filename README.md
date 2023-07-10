@@ -30,3 +30,4 @@ C++搭配QtCreator学习Qt的过程，可以作为新手学习Qt的参考及学�
 * [图片转变为圆图片](project_PictureToCircle)
 * [绘制图片掩码图](project_PictureToMask)
 
+* [windeployqt简易窗口版](18_fastGuiDeployTool)
