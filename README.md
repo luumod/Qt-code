@@ -23,11 +23,15 @@ C++搭配QtCreator学习Qt的过程，可以作为新手学习Qt的参考及学�
 - [File文件操作](14_FileOperation)
 - [Designer设计师](15_Designer)及[自定义控件](15_custormWidget)
 - [QSS界面美化](16_qss)
-* 更新中 ....
+- 待等新 ....
 
 ### 附带一些小项目
 * [图片旋转](pictureRotate)
 * [图片转变为圆图片](project_PictureToCircle)
 * [绘制图片掩码图](project_PictureToMask)
+<<<<<<< HEAD
 
 * [windeployqt简易窗口版](18_fastGuiDeployTool)
+=======
+* [QSS - QQ登录界面模拟](17_QQlogin)
+>>>>>>> 729577ded81841a46014dae116d85c8280e0cfe5
