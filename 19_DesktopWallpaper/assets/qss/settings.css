@@ -1,0 +1,26 @@
+QWidget#TopWidget{
+    background-color: rgb(110,143,187);
+} 
+ 
+QPushButton#model1,#model2,#model3,#set{
+    background-color: rgba(0,120,212, 200);
+    min-width: 100;
+    min-height: 40; 
+    border-radius: 10px;
+    color: white;
+}
+
+QPushButton#buttonClose{
+    background-color: transparent;
+    image: url(":/assets/button/shut.png");
+    border-radius: 3px;
+}
+
+QPushButton#buttonClose:hover{
+    background-color: red;
+    border-radius: 3px;
+}
+
+QWidget#showArea{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.00454717, y2:1, stop:0 rgba(109, 136, 181, 255), stop:0.641509 rgba(116, 226, 255, 255));
+}

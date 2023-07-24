@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TopWidget</class>
+ <widget class="QWidget" name="TopWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>480</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#TopWidget{
+    background-color: rgb(255,255,191);
+} 
+ 
+QPushButton#model1,#model2,#model3,#set{
+    background-color: rgba(255,150,150, 255);
+    min-width: 100;
+    min-height: 40; 
+    border-radius: 10px;
+    color: white;
+}
+
+QPushButton#buttonClose{
+    background-color: purple;
+    image: url(&quot;:/assets/button/shut.png&quot;);
+    border-radius: 3px;
+}
+
+QPushButton#buttonClose:hover{
+    background-color: red;
+    border-radius: 3px;
+}
+
+QWidget#stackedShowArea{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 191, 255), stop:1 rgba(255, 255, 222, 255));
+	border-radius:10px;
+}
+
+QGroupBox{
+	border: none;
+}</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>11</y>
+     <width>458</width>
+     <height>378</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="buttons" native="true">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>30</y>
+      <width>114</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>9</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>9</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="set">
+       <property name="text">
+        <string>设置</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="model1">
+       <property name="text">
+        <string>人物模型①</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="model2">
+       <property name="text">
+        <string>人物模型②</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="model3">
+       <property name="text">
+        <string>人物模型③</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="buttonClose">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>0</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="assert.qrc">
+      <normaloff>:/assets/button/shut.png</normaloff>:/assets/button/shut.png</iconset>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="stackedShowArea">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>341</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="Page1" native="true">
+     <widget class="QGroupBox" name="groupBox1">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>341</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>基础设置</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>140</y>
+        <width>341</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>选择壁纸</string>
+      </property>
+      <widget class="QPushButton" name="buttonChoice">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>90</y>
+         <width>75</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>选择壁纸</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Page2">
+     <widget class="QLabel" name="uniformGril">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>341</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="assert.qrc">:/new/prefix1/assets/desktopRole/blackGril/action2-sad/4.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="uniformHappy">
+      <property name="geometry">
+       <rect>
+        <x>231</x>
+        <y>29</y>
+        <width>47</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>开心</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="uniformSad">
+      <property name="geometry">
+       <rect>
+        <x>231</x>
+        <y>63</y>
+        <width>47</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>哀怨</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="uniformNaughty">
+      <property name="geometry">
+       <rect>
+        <x>231</x>
+        <y>97</y>
+        <width>47</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>调皮</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="uniformShy">
+      <property name="geometry">
+       <rect>
+        <x>231</x>
+        <y>131</y>
+        <width>47</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>害羞</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Page3">
+     <widget class="QLabel" name="summaryGirl">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>341</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="assert.qrc">:/new/prefix1/assets/desktopRole/summerGril/1.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="confirmCbxPage3">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>30</y>
+        <width>79</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>模型②</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Page4">
+     <widget class="QLabel" name="littleBoy">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>0</y>
+        <width>341</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="assert.qrc">:/new/prefix1/assets/desktopRole/littleBoy/3.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="confirmCbxPage4">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>50</y>
+        <width>79</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>模型③</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="assert.qrc"/>
+ </resources>
+ <connections/>
+</ui>
