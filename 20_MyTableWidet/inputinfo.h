@@ -15,6 +15,8 @@ public:
     void input();
     int colCount()const;
     int rowCount()const;
+protected:
+    void closeEvent(QCloseEvent* ev)override;
 signals:
     void finished();
 private:

@@ -1,17 +1,20 @@
 ﻿#include "table.h"
 #include "ui_table.h"
+#include <QDebug>
 
 table::table(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::table)
 {
     ui->setupUi(this);
-    this->setAttribute(Qt::WidgetAttribute::WA_DeleteOnClose);
-
+    //this->setAttribute(Qt::WidgetAttribute::WA_DeleteOnClose);
+//this->setAttribute(Qt::WA_QuitOnClose,false);
 }
 
 table::~table()
 {
+    qInfo()<<"table->close()";
+    //this->close();  //delete On close
     delete ui;
 }
 

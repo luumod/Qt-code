@@ -8,11 +8,14 @@ InputInfo::InputInfo(QWidget *parent) :
 {
     ui->setupUi(this);
     //this->setAttribute(Qt::WidgetAttribute::WA_DeleteOnClose);
+    //this->setAttribute(Qt::WA_QuitOnClose,false);
     input();
 }
 
 InputInfo::~InputInfo()
 {
+    qInfo()<<"InputInfo->close";
+    //this->close(); //delete On close
     delete ui;
 }
 
@@ -34,4 +37,8 @@ int InputInfo::colCount() const
 int InputInfo::rowCount() const
 {
     return row;
+}
+
+void InputInfo::closeEvent(QCloseEvent *ev)
+{
 }
