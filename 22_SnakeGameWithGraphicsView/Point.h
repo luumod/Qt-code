@@ -32,9 +32,9 @@ public:
     {
         m_f = m_g + m_h;//计算f
     }
-    bool canWalk(int xMin=0,int xMax=70,int yMin=0,int yMax=60){
+    bool canWalk(int xMin=0,int xMax=64,int yMin=0,int yMax=48){
         //判断当前点能不能走
-        if (m_row<xMin || m_row>=xMax || m_col<yMin || m_col>=yMax){
+        if (m_row<xMin || m_row>xMax || m_col<yMin || m_col>yMax){
             return false;
         }
         return true;

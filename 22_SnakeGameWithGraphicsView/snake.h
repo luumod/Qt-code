@@ -19,7 +19,8 @@ public:
     ~Snake();
     void init();
     void FindWay();
-    bool snakeDied()const;
+    bool snakeDiedToWall()const;
+    bool snakeDiedToBody()const;
     QGraphicsRectItem* createNode(int x,int y);
     void checkColliders();
     void gameOver();
@@ -37,7 +38,7 @@ private:
     QList<QGraphicsRectItem*> m_snake;
     QTimer* timerNormalMoveStart = nullptr;
     int timerId2 = 0, timerId3 = 0;
-    int m_dirX = 0;
+    int m_dirX = 10;
     int m_dirY = 0;
     QGraphicsRectItem* foodItem = nullptr;
     bool isAlive = true;

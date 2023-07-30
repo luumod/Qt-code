@@ -1,9 +1,7 @@
 ﻿#ifndef COMMON_H
 #define COMMON_H
 
-
-bool vis[645][490]{false};
-
+bool vis[70][60]{false};
 
 
 #endif // COMMON_H

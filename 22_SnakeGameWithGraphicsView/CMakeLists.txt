@@ -20,6 +20,8 @@ set(PROJECT_SOURCES
 	point.h
 	Node.h
 	astarfindway.h
+	global.h
+	global.cpp
 
 )
 

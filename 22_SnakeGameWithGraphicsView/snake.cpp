@@ -9,6 +9,9 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QTimer>
+#include <iostream>
+
+AStarFindWay* m_instance = nullptr;
 
 //辅助函数
 #define randomColor() QRandomGenerator::global()->bounded(256)
@@ -52,6 +55,7 @@ Snake::~Snake()
 
 void Snake::init()
 {
+
     //QGraphicsRectItem*
     destroyedSnake();
     m_snake.push_back(this->addRect(0,0,10,10));
@@ -62,26 +66,40 @@ void Snake::init()
         m_snake[i]->setPos((2-i)*10,100);
         m_snake[i]->setBrush(QColor(randomColor(),randomColor(),randomColor()));
     }
+
     //产生食物
     foodItem = createNode(random10(0,this->width()),random10(0,this->height()));
+#if DEBUG
+    //for (int i=0;i<64;i++){
+    //    for (int j=0;j<48;j++){
+    //        std::cout<<Global::vis[i][j]<<' ';
+    //    }
+    //    std::cout<<'\n';
+    //}
+#endif
+
+
 }
 
 void Snake::FindWay()
 {
+    //清空遍历数组
+    memset(Global::vis,false,sizeof(Global::vis));
+
     //A星搜索
     m_path.clear();
     if (Astar){
         delete Astar;
         Astar = nullptr;
     }
-    Astar = new AStarFindWay(point(m_snake.front()->x(),m_snake.front()->y()),point(foodItem->x(),foodItem->y()));
-    if (Astar->find()){
+    Astar =new AStarFindWay(point(m_snake.front()->x(),m_snake.front()->y()),point(foodItem->x(),foodItem->y()));
+    if (Astar->find(m_snake)){
         Astar->getWay();
         Astar->getPath(m_path);
     }
 }
 
-bool Snake::snakeDied()const
+bool Snake::snakeDiedToWall()const
 {
     if (m_snake.front()->pos().x()<0 ||
         m_snake.front()->pos().y()<0 ||
@@ -89,11 +107,20 @@ bool Snake::snakeDied()const
         m_snake.front()->pos().y()>this->height() ){
         return false;
     }
-    //for (auto& x:m_snake){
-    //    if (m_snake.front()->collidesWithItem(x)){
-    //        return false;
-    //    }
-    //}
+    return true;
+}
+
+bool Snake::snakeDiedToBody() const
+{
+    //判断头部就等于判断全部身体
+    for (auto& x:m_snake){
+        if (x==m_snake.front()){
+            continue;
+        }
+        if (x->pos() == m_snake.front()->pos()){
+            return false;
+        }
+    }
     return true;
 }
 
@@ -113,20 +140,29 @@ void Snake::checkColliders()
         //蛇尾增长
         m_snake.push_back(foodItem);
         foodItem = createNode(random10(0,this->width()),random10(0,this->height()));
-        if (m_isAutoFind){ //开始自动寻路选项
+        qInfo()<<"新生成食物位置: "<<foodItem->pos();
+        qInfo()<<"当前长度: "<<m_snake.size();
+        if (m_isAutoFind){ //开始自动寻路搜索路径
             FindWay();
         }
-
     }
 }
 
 void Snake::gameOver()
 {
     //游戏结束
-    if (!snakeDied()){
+    if (!snakeDiedToWall()){
         auto wid = new QWidget;
         wid->deleteLater();
         QMessageBox::warning(wid,"提示","碰撞到墙了，游戏结束");
+        connect(wid,&QWidget::destroyed,this,[=](){
+            qApp->closeAllWindows();
+        });
+    }
+    if (!snakeDiedToBody()){
+        auto wid = new QWidget;
+        wid->deleteLater();
+        QMessageBox::warning(wid,"提示","你吃到了自己的身体！游戏结束");
         connect(wid,&QWidget::destroyed,this,[=](){
             qApp->closeAllWindows();
         });
@@ -139,10 +175,8 @@ void Snake::AutoMove()
     if (!m_path.empty()){
 
         for (int i = m_snake.size()-1;i>0;--i){
-
             m_snake.at(i)->setPos(m_snake.at(i-1)->pos());
         }
-        //头部移动
         m_snake.front()->setPos(m_path.front().first,m_path.front().second);
         m_path.pop_front();
         //吃食物
@@ -155,19 +189,19 @@ void Snake::AutoMove()
 
 void Snake::normalMove()
 {
-    //蛇移动
+
+    //手动蛇移动
     //后一个的位置等于前一个的位置
     for (int i = m_snake.size()-1;i>0;--i){
         m_snake.at(i)->setPos(m_snake.at(i-1)->pos());
     }
-    //头部移动
     m_snake.front()->moveBy(m_dirX,m_dirY);
-
-    //碰撞检测
-    checkColliders();
 
     //游戏结束
     gameOver();
+
+    //碰撞检测
+    checkColliders();
 }
 
 void Snake::keyPressEvent(QKeyEvent *ev)

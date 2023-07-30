@@ -4,6 +4,8 @@
 #include <QObject>
 #include "Node.h"
 #include <QDebug>
+#include "global.h"
+#include <QGraphicsRectItem>
 
 const int ROW = 10;
 const int COL = 10;
@@ -11,7 +13,7 @@ const int ZXDJ = 10;	//直线代价
 const int XXDJ = 14;	//斜线代价
 enum Dir { p_up, p_down, p_left, p_right, p_lup, p_ldown, p_rup, p_rdown };
 
-#define DEBUG false
+#define DEBUG true
 
 //单例寻路
 class AStarFindWay:public QObject
@@ -21,7 +23,7 @@ public:
     AStarFindWay(const point& begPos,const point& endPos)
         :m_begPos(begPos),m_endPos(endPos),m_pRoot(new Node(begPos)),
         m_currentNode(m_pRoot),m_isFind(false){
-        memset(vis,false,sizeof(vis));
+        //memset(vis,false,sizeof(vis));
     }
     void getPath(std::list<std::pair<int,int>>& res){
         res.swap(m_path);
@@ -36,7 +38,20 @@ public:
             }
         }
     }
-    bool find(){
+    bool checkBody(const QList<QGraphicsRectItem*>& snake){
+        //触碰身体检测
+        for (auto& x:snake){
+            if (x == snake.front()){
+                continue;
+            }
+            if (x->pos() == snake.front()->pos()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool find(const QList<QGraphicsRectItem*>& snake){
         while (true)
         {
             //1. 某个点八个方向依次遍历 计算g代价
@@ -88,8 +103,8 @@ public:
                 }
                 //判断他们能不能走，能走的计算h及f 入树  存储在buff数组
                 if (m_seerPoint->currentPoint().canWalk() &&
-                    !vis[m_seerPoint->currentPoint().m_row][m_seerPoint->currentPoint().m_col] &&
-                    true /*不能碰到蛇的身体*/)
+                    !Global::vis[m_seerPoint->currentPoint().m_row][m_seerPoint->currentPoint().m_col] &&
+                    true)
                 {	//能走
                     //计算代价
                     m_seerPoint->currentPoint().GetH(m_seerPoint->currentPoint(), m_endPos);//计算h代价
@@ -100,7 +115,7 @@ public:
                     //存入数组
                     buff.push_back(m_seerPoint);
                     //标记这个点走过
-                    vis[m_seerPoint->currentPoint().m_row][m_seerPoint->currentPoint().m_col] = true;
+                    Global::vis[m_seerPoint->currentPoint().m_row][m_seerPoint->currentPoint().m_col] = true;
                 }
                 else
                 {
@@ -148,17 +163,17 @@ public:
                 m_currentNode = m_currentNode->fatherNode();
             }
 #if DEBUG //打印路径
-            qInfo()<<"完成！";
+            qInfo()<<"完成！"<<"("<<m_begPos.m_row<<","<<m_begPos.m_col<<")"<<"->"<<"("<<m_endPos.m_row<<","<<m_endPos.m_col<<")";
 #endif
             std::reverse(m_path.begin(),m_path.end());
 #if DEBUG //打印路径
-            for (auto&x :m_path){
-                qInfo()<<x;
-            }
+            //for (auto&x :m_path){
+            //    qInfo()<<x;
+            //}
 #endif
         }
     }
-    bool vis[70][60]{false};
+    //bool vis[70][60]{false};
 signals:
     void findFinished();
 private:
