@@ -1,4 +1,4 @@
-#ifndef WIDGET_H
+﻿#ifndef WIDGET_H
 #define WIDGET_H
 
 #include <QWidget>
@@ -17,5 +17,8 @@ public:
 
 private:
     Ui::Widget *ui;
+
+
+
 };
 #endif // WIDGET_H
