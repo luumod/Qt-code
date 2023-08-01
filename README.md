@@ -24,6 +24,8 @@ C++搭配QtCreator学习Qt的过程，可以作为新手学习Qt的参考及学�
 - [Designer设计师](15_Designer)及[自定义控件](15_custormWidget)
 - [QSS界面美化](16_qss)
 - [Model View 模型视图框架](20_QQContracts)
+- [Animation动画与状态机](21_Animation)
+- [QGraphics图形视图框架](22_GraphicsView)
 - 待等新 ....
 
 ### 附带一些小项目
@@ -35,3 +37,7 @@ C++搭配QtCreator学习Qt的过程，可以作为新手学习Qt的参考及学�
 * [简易版桌面小宠物](19_DesktopWallpaper)
 * [QQ好友界面模拟](20_QQContracts)
 * [自己设计的 n*m 表格填写功能](20_MyTableWidet)
+* [图形视图框架：自动寻路A*贪吃蛇](22_SnakeGameWithGraphicsView)
+* [图形视图框架：流程图模拟](22_QGraphics_Diagram)
+* [图形视图框架：碰撞的老鼠](22_Graphics_MouseExample)
+
